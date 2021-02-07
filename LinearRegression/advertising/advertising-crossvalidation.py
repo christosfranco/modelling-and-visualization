@@ -12,7 +12,7 @@ data = pd.read_csv("Advertising.csv", delimiter=",", index_col=False)
 
 
 #Splitting into train and test sets
-train_data, test_data = train_test_split(data,test_size=0.4)
+train_data, test_data = train_test_split(data,test_size=0.2)
 
 #print(train_data.shape)
 #print(test_data.shape)
@@ -36,7 +36,7 @@ y_train = y_train.reshape((len(y_train), 1))
 X_test = X_test.reshape((len(X_test), 1))
 y_test = y_test.reshape((len(y_test), 1))
 
-
+print(X_train)
 print("Number of training instances: %i" % X_train.shape[0])
 print("Number of features: %i" % X_train.shape[1])
 
@@ -80,7 +80,7 @@ fig = plt.figure()
 plt.plot(X_new_test[:,0], y_test, 'o', color='blue')
 plt.plot(X_new_train[:,0], preds, 'x', color='red')
 plt.plot(Xplot[:,0], preds_plot, '-', color='green')
-plt.xlabel('TV ads budged', fontsize = 12)
+plt.xlabel('TV ads budget', fontsize = 12)
 plt.ylabel('sales', fontsize = 10)
 plt.show()
 fig.savefig('plot-linearregression.jpg')
@@ -159,7 +159,7 @@ fig = plt.figure()
 plt.plot(X_new_test[:,0], y_test, 'o', color='blue')
 plt.plot(X_new_test[:,0], preds, 'x', color='red')
 plt.plot(Xplot[:,0], preds_plot, '-', color='green')
-plt.xlabel('TV ads budged', fontsize = 12)
+plt.xlabel('TV ads budget', fontsize = 12)
 plt.ylabel('sales', fontsize = 10)
 plt.show()
 fig.savefig('plot-linearregression-bestlam.jpg')

@@ -12,7 +12,7 @@ singleFeatureColumn = list(range(0,3))
 
 # load data
 data = pd.read_csv("Advertising.csv", delimiter=",", index_col=False)
-#print("\n",data.head)
+print("\n",data.head)
 
 #dropping unnamed cloumn
 data = data.drop(['Unnamed: 0'], axis=1)
@@ -123,3 +123,7 @@ title = title + "all features are " + colors[len(singleFeatureColumn)]
 plt.title(title)
 plt.show()
 plt.close()
+
+
+#If we use all features we get a higher RMSE and MAPE. 
+# But our prediction values are better at foreing a wider range 
