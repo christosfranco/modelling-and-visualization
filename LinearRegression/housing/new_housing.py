@@ -34,8 +34,6 @@ print("Fit linear regression with all features\n" , sui)
 presingle = model_single.predict(X_test[:,0])
 preall = model_alle.predict(X_test)
 def rmse(t, tp):
-    print(t)
-    print(tp)
     return numpy.sqrt(numpy.mean(numpy.square(numpy.abs(numpy.subtract(t,tp)))))
 
 #This function is used to plot a linear line on the graph to compare visuali
@@ -50,6 +48,7 @@ ytestvals = list(map(gtest, xtestvals)) #evaluate gtest for each point in xtestv
 print("RMSE Single Feature the Column 0:", rmse(t_test, (presingle)))
 print("RMSE All features:", rmse(t_test, (preall)))
 
+fig = plt.figure()
 #plot with single feature
 plt.scatter(t_test, presingle , alpha=0.5)
 #plot with all features
@@ -58,8 +57,10 @@ plt.scatter(t_test, preall , alpha=0.5)
 plt.plot(xtestvals, ytestvals,alpha=0.5)
 
 #Labels and title of plot
+
 plt.xlabel("Test values")
 plt.ylabel("Predictions")
 plt.title("Evaluation, Orange is prediction with all features, Blue with single feature")
 plt.show()
+fig.savefig("allfeaturesplot.jpg")
 plt.close()
