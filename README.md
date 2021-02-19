@@ -1,2 +1,2 @@
 # modelling-and-visualization
-Tools to visualize data, applied to some machine learning algorithms
+Machine learning algorithms visualized; Linear Regression, SVM, PCA (RandomForest, kNN),
